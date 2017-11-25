@@ -73,32 +73,24 @@ module.exports = React;
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(2);
-(function webpackMissingModule() { throw new Error("Cannot find module \"watch\""); }());
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(0);
-var ReactDOM = __webpack_require__(3);
-var HelloWorld_1 = __webpack_require__(4);
+var ReactDOM = __webpack_require__(2);
+var HelloWorld_1 = __webpack_require__(3);
 var mount = document.getElementById('js-react-app-mount');
-ReactDOM.render(React.createElement(HelloWorld_1.HelloWorld, { compiler: "TypeScript", framework: "TypeScript" }), mount);
+ReactDOM.render(React.createElement(HelloWorld_1.HelloWorld, null), mount);
 
 
 /***/ }),
-/* 3 */
+/* 2 */
 /***/ (function(module, exports) {
 
 module.exports = ReactDOM;
 
 /***/ }),
-/* 4 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -121,7 +113,9 @@ var HelloWorld = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     HelloWorld.prototype.render = function () {
-        return (React.createElement("h1", null, "Hello World!"));
+        return (React.createElement("div", null,
+            React.createElement("h1", null, "Hello World!"),
+            React.createElement("p", null, "This is pretty cool though right?!")));
     };
     return HelloWorld;
 }(React.Component));

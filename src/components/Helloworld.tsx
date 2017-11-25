@@ -1,14 +1,14 @@
 import * as React from 'react'
 
-export interface HelloWorldProps {
-  compiler: string
-  framework: string
-}
+export interface IHelloWorldProps { }
 
-export class HelloWorld extends React.Component<HelloWorldProps, object> {
-  render() {
+export class HelloWorld extends React.Component<IHelloWorldProps, object> {
+  render () {
     return (
-      <h1>Hello World!</h1>
+      <div>
+        <h1>Hello World!</h1>
+        <p>This is pretty cool though right?!</p>
+      </div>
     )
   }
 }

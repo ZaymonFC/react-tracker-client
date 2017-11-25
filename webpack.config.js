@@ -16,7 +16,19 @@ module.exports = {
       // Route all files with .ts or tsx to the typescript loader (awesome-typescript-loader)
       { 
         test: /\.tsx?$/,
-        loader: "awesome-typescript-loader",
+        loader: [
+        //   { 
+        //     loader: "tslint-loader",
+        //     options: {
+        //       tsConfigFile: 'tsconfig.json'
+        //     },
+        //   },
+          {
+            loader: "awesome-typescript-loader",
+            options: { },
+          },
+        ],
+        
       },
       {
         enforce: "pre", 
@@ -25,7 +37,6 @@ module.exports = {
       }
     ]
   },
-
   externals: {
     "react": "React",
     "react-dom": "ReactDOM"
