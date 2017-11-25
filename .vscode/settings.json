@@ -1,0 +1,19 @@
+{
+    "editor.tabSize": 2,
+    "todohighlight.keywords": [{
+        "text": "TODO:",
+        "backgroundColor": "#03A9F4",
+        "color" : "white"
+    },
+    {
+        "text": "FINISHME:",
+        "backgroundColor": "#26a69a",
+        "color" : "white"
+    },
+    {
+        "text": "CHECKME:",
+        "backgroundColor": "#e91e63",
+        "color" : "white"
+    }
+],
+}
