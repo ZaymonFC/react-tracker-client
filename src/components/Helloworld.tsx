@@ -1,14 +1,18 @@
 import * as React from 'react'
+import { Header } from '../components/Header/Header'
 
-export interface IHelloWorldProps { }
+export interface IAppProps { }
 
-export class HelloWorld extends React.Component<IHelloWorldProps, object> {
+export class App extends React.Component<IAppProps, object> {
   render () {
     return (
       <div>
         <h1>Hello World!</h1>
         <p>This is pretty cool though right?!</p>
+        <Header />
       </div>
     )
   }
 }
+
+
