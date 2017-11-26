@@ -12,7 +12,8 @@
         "quotemark": [true, "single", "jsx-double"],
         "class-name": true,
         "no-empty-interface": false,
-        "member-access": false
+        "member-access": false,
+        "no-consecutive-blank-lines": false
     },
     "rulesDirectory": []
 }

@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "watch": "webpack --progress --colors --watch"
+    "watch": "webpack --progress --colors --watch",
+    "http": "http-server"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +20,7 @@
   },
   "devDependencies": {
     "awesome-typescript-loader": "^3.4.0",
+    "http-server": "^0.10.0",
     "source-map-loader": "^0.2.3",
     "tslint": "^5.8.0",
     "tslint-loader": "^3.5.3",

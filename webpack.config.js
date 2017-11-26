@@ -10,19 +10,12 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".json"],
   },
-
   module: {
     rules: [
       // Route all files with .ts or tsx to the typescript loader (awesome-typescript-loader)
-      { 
+      {
         test: /\.tsx?$/,
         loader: [
-        //   { 
-        //     loader: "tslint-loader",
-        //     options: {
-        //       tsConfigFile: 'tsconfig.json'
-        //     },
-        //   },
           {
             loader: "awesome-typescript-loader",
             options: { },
@@ -34,7 +27,21 @@ module.exports = {
         enforce: "pre", 
         test: /\.js$/,
         loader: "source-map-loader",
+      },
+      {
+        enforce: "pre",
+        test: /\.tsx?$/,
+        loader: [
+          {
+            loader: "tslint-loader",
+            options: {
+              tsConfigFile: 'tsconfig.json',
+              
+            }
+          }
+        ]
       }
+
     ]
   },
   externals: {
