@@ -3,6 +3,16 @@
 //   :::::: W E B P A C K   C O N F I G U R A T I O N   F I L E : :  :   :    :     :        :          :
 // ──────────────────────────────────────────────────────────────────────────────────────────────────────
 //
+
+
+// ─── INIT CSS EXTRACTER ─────────────────────────────────────────────────────────
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+
+const extractSass = new ExtractTextPlugin({
+    filename: "[name].[contenthash].css",
+});
+
+
 module.exports = {
   entry: "./src/index.tsx",
   output: {
@@ -11,12 +21,12 @@ module.exports = {
   },
   devtool: "source-map",
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".json"],
+    extensions: [".ts", ".tsx", ".js", ".json", ".scss"],
   },
   module: {
     rules: [
       //
-      // ─── TSLINT PRECOMPILE STEP ──────────────────────────────────────
+      // ─── TSLINT PRECOMPILE LINT ──────────────────────────────────────
       //
       {
         enforce: "pre",
@@ -33,6 +43,25 @@ module.exports = {
         ]
       },
       //
+      // ─── SASS COMPILE ────────────────────────────────────────────────
+      //
+      {
+        test: /\.(scss|sass)?$/,
+        use: [
+          {
+            loader: "style-loader"
+          }, {
+            loader: "css-loader", options: {
+              // sourceMap: true,
+            },
+          }, {
+            loader: "sass-loader", options: {
+              // sourceMap: true,
+            },
+          }
+        ]
+      },
+      //
       // ─── TYPSCRIPT COMPILE ───────────────────────────────────────────
       //
       {
@@ -43,21 +72,6 @@ module.exports = {
             options: { },
           },
         ],
-      },
-      //
-      // ─── SCSS COMPILE ────────────────────────────────────────────────
-      //
-      {
-        test: /\.scss?$/,
-        use: [
-          {
-            loader: "style-loader"
-          }, {
-            loader: "css-loader"
-          }, {
-            loader: "sass-loader"
-          }
-        ]
       },
       //
       // ─── GENERATE SOURCE MAPPING ─────────────────────────────────────
