@@ -1,0 +1,38 @@
+@import './typography';
+@import './colors';
+
+.navbar {
+  background-color: $color-primary;
+  height: 80;
+  margin: -8 -8 0 -8;
+  padding: 0;
+}
+
+.navbar-heading {
+  margin-left: 0.5em;
+}
+
+.navbar ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.navbar li {
+  float: right;
+  font-size: $text-medium;
+}
+
+.navbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 28px 25px;
+  margin-right: 15px;
+}
+
+.navbar li a:hover {
+  background-color: $color-primary-hover;
+}

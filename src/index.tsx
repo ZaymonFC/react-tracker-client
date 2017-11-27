@@ -1,12 +1,12 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-import { App } from './components/App'
+import { AppContainer } from './components/AppContainer'
 
 import './styles/entry.scss'
 
 const mount = document.getElementById('js-react-app-mount')
 
 ReactDOM.render (
-  <App />,
+  <AppContainer />,
   mount,
 )

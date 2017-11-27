@@ -3,16 +3,7 @@
 //   :::::: W E B P A C K   C O N F I G U R A T I O N   F I L E : :  :   :    :     :        :          :
 // ──────────────────────────────────────────────────────────────────────────────────────────────────────
 //
-
-
-// ─── INIT CSS EXTRACTER ─────────────────────────────────────────────────────────
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
-
-const extractSass = new ExtractTextPlugin({
-    filename: "[name].[contenthash].css",
-});
-
-
+//
 module.exports = {
   entry: "./src/index.tsx",
   output: {
@@ -52,11 +43,11 @@ module.exports = {
             loader: "style-loader"
           }, {
             loader: "css-loader", options: {
-              // sourceMap: true,
+              sourceMap: true,
             },
           }, {
             loader: "sass-loader", options: {
-              // sourceMap: true,
+              sourceMap: true,
             },
           }
         ]
